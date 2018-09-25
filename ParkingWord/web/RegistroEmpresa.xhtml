@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+        <h:outputStylesheet library="css" name="bootstrap.min.css" />
+        <title>ParkingWord</title>
+        <style>
+            .col-xs-updated {
+                width: 92% !important;
+            }
+            .ui-selectonemenu-label{
+                width:100% !important;
+            }
+            .ui-selectonemenu{
+                width:100% !important;
+                padding: 0px !important;
+            }  
+            .ui-selectonemenu .ui-selectonemenu-trigger {
+                width: 25px;
+                height: 100%;
+            }
+            .inputNumber input
+            {
+                width: 100% !important;
+            }
+            .text100{
+                width:100% !important;
+            }
+            .navbar-inverse .navbar-brand {
+                color: #fff;
+            }
+            .navbar-inverse .navbar-brand:hover,
+            .navbar-inverse .navbar-brand:focus {
+                color: #fff;
+                background-color: transparent;
+            }
+            .btn-primary {
+                color: #fff;
+                background-color: #000000;
+                border-color: #c0c0c0;
+            }
+            .btn-primary:focus,
+            .btn-primary.focus {
+                color: #fff;
+                background-color: #222222;
+                border-color: #c0c0c0;
+            }
+            .btn-primary:hover {
+                color: #fff;
+                background-color: #222222;
+                border-color: #c0c0c0;
+            }
+            .btn-primary:active:hover,
+            .btn-primary.active:hover,
+            .open > .dropdown-toggle.btn-primary:hover,
+            .btn-primary:active:focus,
+            .btn-primary.active:focus,
+            .open > .dropdown-toggle.btn-primary:focus,
+            .btn-primary:active.focus,
+            .btn-primary.active.focus,
+            .open > .dropdown-toggle.btn-primary.focus {
+                color: #fff;
+                background-color: #222222;
+                border-color: #c0c0c0;
+            }
+            .captcha {
+                width: 304px;
+                margin: 0 auto;
+            }
+        </style>
+    </h:head> 
+    <body> 
+        <div class="navbar navbar-inverse " >
+            <div class="navbar-brand">Registro de Empresa</div>
+        </div>
+        <div class="container" style="width: 90%">
+            <div class="row">
+                <div  class="col-xs-12 col-xs-updated">
+                    <h:form id="frmEmpresa" styleClass="form-horizontal" enctype="multipart/form-data">
+
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="IdEmpresa" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:inputText value="#{empresaMB.empresa.idEmpresa}" pt:required="true" pt:placeholder="IdEmpresa" styleClass="text100" />
+                                </div>
+                            </div>   
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Direccion" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:inputText value="#{empresaMB.empresa.direccion}" pt:required="true" pt:placeholder="Direccion" styleClass="text100" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Empresa" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:inputText value="#{empresaMB.empresa.empresa}" pt:required="true" pt:placeholder="Empresa" styleClass="text100"/>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="Telefono" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:inputText value="#{empresaMB.empresa.telefono}" pt:required="true" pt:placeholder="Telefono" styleClass="text100"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="NIT" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:inputText value="#{empresaMB.empresa.ruc}" pt:required="true" pt:placeholder="NIT" styleClass="text100"/>
+
+
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <p:outputLabel value="NodeCupos:" styleClass="control-label col-sm-5" />
+                                <div class="col-sm-6">
+                                    <p:selectOneMenu panelStyleClass="panel" value="#{empresaMB.empresa.numeroCupos}">
+                                        <f:selectItem itemLabel="NodeCupos" itemValue=""/>
+                                        <f:selectItem itemLabel="1" itemValue="1"/>
+                                        <f:selectItem itemLabel="2" itemValue="2"/> 
+                                        <f:selectItem itemLabel="3" itemValue="3"/>
+                                        <f:selectItem itemLabel="4" itemValue="4"/>
+                                        <f:selectItem itemLabel="5" itemValue="5"/>
+                                        <f:selectItem itemLabel="6" itemValue="6"/>
+                                        <f:selectItem itemLabel="7" itemValue="7"/>
+                                        <f:selectItem itemLabel="8" itemValue="8"/>
+                                        <f:selectItem itemLabel="9" itemValue="9"/>
+                                        <f:selectItem itemLabel="10" itemValue="10"/>
+                                        <f:selectItem itemLabel="11" itemValue="11"/>
+                                        <f:selectItem itemLabel="12" itemValue="12"/>
+                                        <f:selectItem itemLabel="13" itemValue="13"/>
+
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">                            
+                            <div class="form-group col-sm-5">
+                                <div class="col-sm-5">
+                                    <h:commandButton   action="#{empresaMB.validarSaveOrUpdateEmpresa()}" value="Guardar" styleClass="btn btn-lg btn-primary btn-block"/>
+                                </div>
+                                <div class="col-sm-5">
+                                    <h:commandButton    value="Cancelar" action="#{empresaMB.limpiar()}"
+                                                        styleClass="btn btn-lg btn-primary btn-block"/>
+                                </div>                                
+                            </div>
+                        </div>
+
+                    </h:form>
+
+
+
+
+                    <h:form id="TablaDatos">
+                        <h4><b>Empresas Registradas</b></h4>                        
+
+                        <p:dataTable id="tablaRegistros" var="v" value="#{empresaMB.listavempresa}"  reflow="true" rowHover="true" >
+                            <p:column headerText="Empresa">
+                                <h:outputText value="#{v.empresa}"/>
+                            </p:column>
+
+                            <p:column headerText="NIT">
+                                <h:outputText value="#{v.ruc}"/>
+                            </p:column>
+
+                            <p:column headerText="Direccion">
+                                <h:outputText value="#{v.direccion}"/>
+                            </p:column>
+                            <p:column headerText="Telefono">
+                                <h:outputText value="#{v.telefono}"/>
+                            </p:column>
+                            <p:column headerText="NodeCupos">
+                                <h:outputText value="#{v.numeroCupos}"/>                                
+                            </p:column>
+                            <p:column headerText="Detalle">
+                                <h:commandButton  action="#{empresaMB.verDetalleEmpresa()}" value="Detalle" styleClass="btn btn-lg btn-primary btn-block">
+                                    <f:setPropertyActionListener target="#{empresaMB.empresa}" value="#{v}"/>
+                                </h:commandButton>
+                                <h:outputText value=""/>
+                            </p:column>
+                            <p:column headerText="Editar">
+                                <p:commandButton   value="Editar" styleClass="btn btn-lg btn-primary btn-block"
+                                                   update=":frmEmpresa">
+                                    <f:setPropertyActionListener target="#{empresaMB.empresa}" value="#{v}"/>
+                                </p:commandButton>                                
+                            </p:column>
+                            <p:column headerText="Eliminar">
+                                <p:commandButton value="Eliminar" styleClass="btn btn-lg btn-primary btn-block" 
+                                    update=":frmEliminar" oncomplete="PF('DeleteEmpresa').show();">
+                                    <f:setPropertyActionListener target="#{empresaMB.empresa}" value="#{v}"/>
+                                </p:commandButton>                                
+                            </p:column>
+                        </p:dataTable>
+
+
+                    </h:form>
+                    
+                    <p:dialog id="dlgEliminar" header="Eliminar Empresa" widgetVar="DeleteEmpresa" hideEffect="explode" showEffect="explode" modal="true">
+                        <h:form id="frmEliminar">
+                            <h:outputText value="Desea eliminar el Registro?" />                            
+                            <br></br>
+                            <p:commandButton actionListener="#{empresaMB.deletedEmpresa()}" value="Si" 
+                                             update=":TablaDatos" onclick="PF('DeleteEmpresa').hide();"/>
+                            <p:commandButton value="No" onclick="PF('DeleteEmpresa').hide();"/>
+                        </h:form>
+                    </p:dialog>
+
+
+                </div>
+            </div>
+        </div>
+    </body> 
+</html>
+
